@@ -1,0 +1,43 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element text-center">
+                    <span>
+                        <img alt="image" class="img-circle" src="~/Content/Images/iconfinder_Shopping_3387285.png" />
+                    </span>
+                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                        <li>@Html.ActionLink("Inicio", "Index", "Dashboard")</li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    IN+
+                </div>
+            </li>
+
+            <li class="@Html.IsSelected(action: "Index", controller:"Dashboard")">
+                <a href="@Url.Action("Index", "Dashboard", new { area = "" })">Inicio</a>
+            </li>
+			
+			<!-- Incio contenido dimánico generado por el DSL -->
+            <li class="">
+            	<a href="#"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Modulo de Tiendas(s)</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse ">
+                    <li class="@Html.IsSelected(action: "Index", controller:"Tienda")">
+                        <a href="@Url.Action("Index", "Tienda", new { area = "TIENDAS"})">Tienda(s)</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="">
+            	<a href="#"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Modulo de Inventarios(s)</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse ">
+                    <li class="@Html.IsSelected(action: "Index", controller:"Producto")">
+                        <a href="@Url.Action("Index", "Producto", new { area = "INVENTARIOS"})">Producto(s)</a>
+                    </li>
+                </ul>
+            </li>
+			<!-- Fin contenido dimánico generado por el DSL -->
+        </ul>
+    </div>
+</nav>
+
